@@ -21,18 +21,18 @@ header-includes: \include{syntax.tex}
 ...
 
 
-# Why $\rightarrow$ How $\rightarrow$ What
+## Why $\rightarrow$ How $\rightarrow$ What
 
    
 \centering ![](sinek.jpg)
 
 \centering <https://www.youtube.com/watch?v=u4ZoJKF_VuA>
 
-# 
+## 
 
 \centering ![](why.svg)
 
-# IAEA 2D/3D PWR benchmark (1976)
+## IAEA 2D/3D PWR benchmark (1976)
 
 :::::::::::::: {.columns}
 ::: {.column width="40%"}
@@ -44,7 +44,7 @@ header-includes: \include{syntax.tex}
 :::
 ::::::::::::::
 
-# Vertical PHWR (Atucha)
+## Vertical PHWR (Atucha)
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -57,25 +57,9 @@ header-includes: \include{syntax.tex}
 ::::::::::::::
 
 
-# Fuel elements
 
 
-:::::::::::::: {.columns}
-::: {.column width="33%"}
-![PWR](pwr1.png)
-:::
-
-::: {.column width="34%"}
-![BWR](bwr1.png)
-:::
-
-::: {.column width="33%"}
-![BWR](candu1.png)
-:::
-::::::::::::::
-
-
-# Steady-state core-level neutronic calculations
+## Steady-state core-level neutronic calculations
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -103,12 +87,12 @@ header-includes: \include{syntax.tex}
 ::::::::::::::
 
 
-# Transient emergency boron injection---CFD
+## Transient emergency boron injection---CFD
 
 \centering ![](cfd.png)
 
 
-# Transient emergency boron injection---core-level neutronics
+## Transient emergency boron injection---core-level neutronics
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -121,7 +105,7 @@ header-includes: \include{syntax.tex}
 ::::::::::::::
 
 
-# Transient emergency boron injection---cell-level neutronics
+## Transient emergency boron injection---cell-level neutronics
 
 
 \centering ![](gota.svg){width=70%}
@@ -130,12 +114,12 @@ header-includes: \include{syntax.tex}
 \centering ![](4x4ref.svg){width=80%}
 
 
-#
+## 
 
 \centering ![](how.svg)
 
 
-# A little bit of history---College (2004-2008) (v1)
+## A little bit of history---College (2004-2008) (v1)
 
  * Solve $\dot{\mathbf{x}} = F(\mathbf{x},t)$
     
@@ -163,15 +147,15 @@ header-includes: \include{syntax.tex}
    c_dot[i] = beta[i]/Lambda * phi - lambda[i]*c[i]
    ``` 
 
-# A little bit of history---Nuclear industry (2008--2014)
+## A little bit of history---Nuclear industry (2008--2014)
 
 . . .
 
 \centering ![](FortranCardPROJ039.jpg)
 
+\centering Modern/Advanced $\neq$ Fortran 90
 
-
-# Spatial discretizations
+## Spatial discretizations
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -201,7 +185,7 @@ header-includes: \include{syntax.tex}
 :::
 ::::::::::::::
 
-# wasora & milonga (v2)
+## wasora & milonga (v2)
 
 :::::::::::::: {.columns}
 ::: {.column width="30%"}
@@ -227,12 +211,12 @@ Wasora's an advanced suite for reactor analysis
 ::::::::::::::
 
 
-# FeenoX (v3)
+## FeenoX (v3)
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-## Software Requirement Specifications
+### Software Requirement Specifications
  
  * Industrial-level: open source for V&V
  * Extensible: free (as in freedom)
@@ -251,9 +235,9 @@ Wasora's an advanced suite for reactor analysis
 . . .
 
 ::: {.column width="50%"}
-## Software Design Specifications
+### Software Design Specifications
 
- * GPLv3+
+ * GPLv3+: it is about _freedom_ not price
  * No-GUI script-friendly GNU/Linux binary
    ![](transfer.svg){width=90%}\ 
  * Scalability based on
@@ -274,30 +258,180 @@ Wasora's an advanced suite for reactor analysis
 \end{center}
 
 
-# 
+## 
 
 \centering  ![](what.svg)
 
+## Point kinetics
 
-# Point kinetics
+:::::::::::::: {.columns}
+::: {.column width="45%"}
 
-# Inverse kinetics
+$$
+\begin{cases}
+\dot{\phi}(t) = \displaystyle \frac{\rho(t) - \Beta}{\Lambda} \cdot \phi(t) + \sum_{i=1}^{N} \lambda_i \cdot c_i \\
+\dot{c}_i(t)  = \displaystyle \frac{\beta_i}{\Lambda} \cdot \phi(t) - \lambda_i \cdot c_i
+\end{cases}
+$$
 
-# Xenon feedback + control
+\vspace{-0.5cm}
 
-# Measuring reactivity coefficients
+ $t$ [s] | $\rho(t)$ [pcm]
+--------:|-----------:
+ 0       |  0
+ 5       |  0
+ 10      | 10
+ 30      | 10
+ 35      |  0
+ 100     |  0 
 
-# 2d pwr
+\vspace{-0.5cm}
 
-# bunny
+\noindent for $0 < t < 100$ starting from steady-steate conditions at full power.
+:::
 
-# cube-sphere
+. . .
 
-# pescaditos
+::: {.column width="55%"}
+```{.feenox include="kinetics/reactivity-from-table.fee"}
+```
 
-# two-squares
+```terminal
+$ feenox reactivity-from-table.fee > flux.dat
+$
+```
+
+:::
+::::::::::::::
+
+## 
+
+\centering ![](reactivity-from-table.pdf)
+
+## Inverse kinetics
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+```{.feenox include="kinetics/inverse-integral.fee"}
+```
+
+. . . 
+
+```{.feenox include="kinetics/inverse-dae.fee"}
+```
+
+:::
 
 
+. . .
+
+::: {.column width="50%"}
+
+```terminal
+$ feenox inverse-dae.fee flux.dat > inverse-dae.dat
+$ feenox inverse-integral.fee flux.dat > inverse-integral.dat
+```
+
+\centering ![](inverse.pdf){width=80%}
+
+\centering ![](inverse-zoom.pdf){width=80%}
+
+:::
+::::::::::::::
 
 
+## 2D IAEA PWR Benchmark
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+\centering ![](013.pdf)
+:::
+
+::: {.column width="50%"}
+\centering ![](018.pdf)
+:::
+::::::::::::::
+
+## 2D IAEA PWR Benchmark
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+\centering ![](053.pdf)
+:::
+
+::: {.column width="50%"}
+\centering ![](058.pdf)
+:::
+::::::::::::::
+
+
+## The $S_2$ Stanford Bunny
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+\centering ![](bunny-phi.png){height=4cm}
+
+:::
+::: {.column width="50%"}
+
+\vspace{1cm}
+
+ * One-group neutron transport
+ * The Stanford Bunny as the geometry
+ * $S_2$ method in 3D (8 angular directions)
+ * Finite elements for spatial discretization
+ 
+:::
+::::::::::::::
+
+
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+\centering ![](bunny-psi1.png){height=2cm}
+:::
+::: {.column width="25%"}
+\centering ![](bunny-psi2.png){height=2cm}
+:::
+::: {.column width="25%"}
+\centering ![](bunny-psi3.png){height=2cm}
+:::
+::: {.column width="25%"}
+\centering ![](bunny-psi4.png){height=2cm}
+:::
+::::::::::::::
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+\centering ![](bunny-psi5.png){height=2cm}
+:::
+::: {.column width="25%"}
+\centering ![](bunny-psi6.png){height=2cm}
+:::
+::: {.column width="25%"}
+\centering ![](bunny-psi7.png){height=2cm}
+:::
+::: {.column width="25%"}
+\centering ![](bunny-psi8.png){height=2cm}
+:::
+::::::::::::::
+
+
+## cube-sphere
+
+
+## Conclusions
+
+### TODO
+
+ * FEM transport
+ * FVM diffusion & transport
+ * Massive parallelization
+    - MPI
+    - Metis
+ * Documentation
+ * Build a community!
+ 
+. . .
+
+\centering <https://www.youtube.com/watch?v=Q-lKK4A2OzA>
 
