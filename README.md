@@ -416,22 +416,47 @@ $ feenox inverse-integral.fee flux.dat > inverse-integral.dat
 ::::::::::::::
 
 
-## cube-sphere
+## Cube-sphere
+
+:::::::::::::: {.columns}
+::: {.column width="20%"}
+\centering \onslide<1->{\includegraphics{cubesphere-0.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<3->{\includegraphics{cubesphere-25.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<3->{\includegraphics{cubesphere-50.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<3->{\includegraphics{cubesphere-75.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<2->{\includegraphics{cubesphere-100.png}}
+:::
+::::::::::::::
+
+\centering \onslide<4->{\includegraphics[width=0.9\linewidth]{cubesphere.pdf}}
+
 
 
 ## Conclusions
 
 ### TODO
 
- * FEM transport
- * FVM diffusion & transport
+ * More formulations (milonga already had them)
+    - FEM transport
+    - FVM diffusion & transport
  * Massive parallelization
     - MPI
     - Metis
  * Documentation
+    - Come up with a nice logo
  * Build a community!
- 
+    - <https://github.com/seamplex/feenox/discussions>
+    
 . . .
 
+\vspace{2cm}
 \centering <https://www.youtube.com/watch?v=Q-lKK4A2OzA>
 
