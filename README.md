@@ -217,7 +217,9 @@ Wasora's an advanced suite for reactor analysis
 ::: {.column width="50%"}
 
 ### Software Requirement Specifications
- 
+
+\centering <https://seamplex.com/feenox/doc/srs.html> 
+
  * Industrial-level: open source for V&V
  * Extensible: free (as in freedom)
  * Cloud-first: programatically-defined
@@ -230,6 +232,7 @@ Wasora's an advanced suite for reactor analysis
    * Bug reporting & tracking
  * V & V
 
+ 
 :::
 
 . . .
@@ -237,25 +240,23 @@ Wasora's an advanced suite for reactor analysis
 ::: {.column width="50%"}
 ### Software Design Specifications
 
+\centering <https://seamplex.com/feenox/doc/sds.html> 
+
  * GPLv3+: it is about _freedom_ not price
  * No-GUI script-friendly GNU/Linux binary
    ![](transfer.svg){width=90%}\ 
- * Scalability based on
-   * UNIX (separation, composition, etc.)
+ * Scalability based on UNIX
    * PETSc/SLEPc (MPI)
    * Gmsh (Metis)
  * Flexibility shown in "what"
  * Web GUI: <https://www.caeplex.com>
- * Everything is Git-tracked
  * Regression testing `make check`
- * Github-hosted
- * V & V: TO DO (help appreciated)!
+ * <https://github.com/seamplex/feenox>
+ * V & V: TODO! (help appreciated)!
+ 
+ 
 :::
 ::::::::::::::
-
-\begin{center}
-\url{https://www.seamplex.com/feenox}
-\end{center}
 
 
 ## 
@@ -338,6 +339,42 @@ $ feenox inverse-integral.fee flux.dat > inverse-integral.dat
 
 :::
 ::::::::::::::
+
+
+## 2D IAEA PWR Benchmark
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+```{.feenox include="iaea-2dpwr.fee"}
+```
+
+:::
+
+::: {.column width="50%"}
+
+```terminal
+$ gmsh -2 iaea-2dpwr-quarter.geo
+$ [...]
+$ gmsh -2 iaea-2dpwr-eighth.geo
+$ [...]
+$ feenox iaea-2dpwr.fee quarter
+keff =  1.02986
+#$ $ feenox iaea-2dpwr.fee eighth
+keff =  1.02975
+$
+```
+
+\centering ![](iaea-2dpwr-fluxes.png){width=75%} 
+
+:::
+::::::::::::::
+
+\centering <https://www.seamplex.com/feenox/examples/#iaea-2d-pwr-benchmark>
+
+\centering 
+
+
 
 
 ## 2D IAEA PWR Benchmark
