@@ -479,12 +479,10 @@ $
 
 
 
-## Conclusions
+## Conclusions & TODO
 
 :::::::::::::: {.columns}
 ::: {.column width="60%"}
-
-### TODO
 
  * More formulations (milonga already had them)
     - FEM transport
