@@ -153,6 +153,8 @@ header-includes: \include{syntax.tex}
 
 \centering ![](FortranCardPROJ039.jpg)
 
+. . .
+
 \centering Modern/Advanced $\neq$ Fortran 90
 
 ## Spatial discretizations
@@ -479,21 +481,37 @@ $
 
 ## Conclusions
 
+:::::::::::::: {.columns}
+::: {.column width="60%"}
+
 ### TODO
 
  * More formulations (milonga already had them)
     - FEM transport
     - FVM diffusion & transport
  * Massive parallelization
-    - MPI
-    - Metis
+    - MPI through PETSc/SLEPc
+    - Metis through Gmsh
  * Documentation
     - Come up with a nice logo
  * Build a community!
     - <https://github.com/seamplex/feenox/discussions>
     
+:::
+::: {.column width="50%"}
+
+![](clouds.jpg)
+
+:::
+::::::::::::::
+
 . . .
 
-\vspace{2cm}
+> “It is really worth any amount of time and effort to get away from Windows if you are doing computational science.”
+>
+> <https://lists.mcs.anl.gov/pipermail/petsc-users/2015-July/026388.html>
+
+. . .
+
 \centering <https://www.youtube.com/watch?v=Q-lKK4A2OzA>
 
