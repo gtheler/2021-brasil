@@ -362,7 +362,7 @@ $ gmsh -2 iaea-2dpwr-eighth.geo
 $ [...]
 $ feenox iaea-2dpwr.fee quarter
 keff =  1.02986
-#$ $ feenox iaea-2dpwr.fee eighth
+$ feenox iaea-2dpwr.fee eighth
 keff =  1.02975
 $
 ```
