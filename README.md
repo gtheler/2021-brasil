@@ -119,7 +119,7 @@ header-includes: \include{syntax.tex}
 \centering ![](how.svg)
 
 
-## A little bit of history---College (2004-2008) (v1)
+## A little bit of history---College (2004--2008) (v1)
 
  * Solve $\dot{\mathbf{x}} = F(\mathbf{x},t)$
     
@@ -264,6 +264,30 @@ Wasora's an advanced suite for reactor analysis
 ## 
 
 \centering  ![](what.svg)
+
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="40%"}
+![](lorenz-gnuplot.svg)
+:::
+::: {.column width="40%"}
+![](nafems-le10.png)
+:::
+::: {.column width="20%"}
+![](nafems-le11-temperature.png)
+:::
+::::::::::::::
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+![](nafems-le1-sigmay.png)
+:::
+::: {.column width="50%"}
+\centering ![](maze3.png){width=75%}
+:::
+::::::::::::::
+
 
 ## Point kinetics
 
