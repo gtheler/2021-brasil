@@ -19,7 +19,7 @@ pandoc -s -f markdown+smart -t beamer+smart hash.yaml README.md -o README.pdf \
   --pdf-engine=xelatex \
   --template=template.tex
 
-pandoc -s -f markdown+smart -t beamer+smart hash.yaml README.md -o README-handout.pdf \
+pandoc -s -f markdown+smart -t beamer+smart hash.yaml README.md -o 2021-brasil.pdf \
   -M handout:true \
   --lua-filter=include-code-files.lua \
   --lua-filter=code-style.lua \

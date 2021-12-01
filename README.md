@@ -6,8 +6,8 @@ author: German (a.k.a. Jeremy) Theler
 email: gtheler@seamplex.com
 institute: |
  | International Nuclear Atlantic Conference
- | Round Table 4 ENFIR Best Estimate codes and methods
- | for Reactor Physics, Thermal Fluid Dynamics and Fuel Behavior
+ | Round Table 4 ENFIR ”Best Estimate codes and methods
+ | for Reactor Physics, Thermal Fluid Dynamics and Fuel Behavior”
 aspectratio: 169
 lang: en-US
 theme: default
@@ -509,6 +509,8 @@ $
 ::: {.column width="60%"}
 
  * 21st century: cloud-first approach
+ * Stick to free and open source software
+    - free $\neq$ open source
  * More formulations (milonga already had them)
     - FEM transport
     - FVM diffusion & transport
@@ -516,25 +518,22 @@ $
     - MPI through PETSc/SLEPc
     - Metis through Gmsh
  * Documentation
+    - <https://www.seamplex.com/feenox/doc>
+    - <https://www.seamplex.com/feenox/examples>
     - Come up with a nice logo
  * Build a community!
     - <https://github.com/seamplex/feenox/discussions>
     
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ![](clouds.jpg)
 
+. . .
+
+\vspace{1cm}
+\centering <https://www.youtube.com/watch?v=Q-lKK4A2OzA>
 :::
 ::::::::::::::
 
-. . .
-
-> “It is really worth any amount of time and effort to get away from Windows if you are doing computational science.”
->
-> <https://lists.mcs.anl.gov/pipermail/petsc-users/2015-July/026388.html>
-
-. . .
-
-\centering <https://www.youtube.com/watch?v=Q-lKK4A2OzA>
 
