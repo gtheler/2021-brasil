@@ -19,13 +19,13 @@ pandoc -s -f markdown+smart -t beamer+smart hash.yaml README.md -o README.pdf \
   --pdf-engine=xelatex \
   --template=template.tex
 
-# pandoc -s -f markdown+smart -t beamer+smart hash.yaml README.md -o README-handout.pdf \
-#   -M handout:true \
-#   --lua-filter=include-code-files.lua \
-#   --lua-filter=code-style.lua \
-#   --listings \
-#   --pdf-engine=xelatex \
-#   --template=template.tex
+pandoc -s -f markdown+smart -t beamer+smart hash.yaml README.md -o README-handout.pdf \
+  -M handout:true \
+  --lua-filter=include-code-files.lua \
+  --lua-filter=code-style.lua \
+  --listings \
+  --pdf-engine=xelatex \
+  --template=template.tex
   
 
 # convert -density 305 README.pdf  pepe.png
